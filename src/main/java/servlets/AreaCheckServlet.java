@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +34,7 @@ public class AreaCheckServlet extends HttpServlet {
 
             String result = chekPenetration(x_ok, y_ok, r_ok);
 
-            Information info = new Information(x_ok, roundCoordinate(y_ok), r_ok, String.valueOf(nowTime), String.valueOf(LocalDateTime.now()), result);
+            Information info = new Information(x_ok, roundCoordinate(y_ok), r_ok, String.valueOf((System.nanoTime() - nowTime) / 1000) + " mcs", String.valueOf(LocalTime.now()), result);
 
             ListInformation listInformation = (ListInformation) request.getSession().getAttribute("listInformation");
             if (listInformation == null) {

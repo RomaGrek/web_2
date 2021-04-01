@@ -1,3 +1,6 @@
+.point {
+    color: black;
+}
 body {
     background: white;
 }
@@ -75,7 +78,6 @@ input[type="submit"] {
 }
 #corX {
     position: relative;
-    left: 100px;
 }
 #radR {
     position: relative;

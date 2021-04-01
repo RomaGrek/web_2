@@ -1,4 +1,3 @@
-
 function validateData(form) {
 
     let x, y, r, m;
@@ -44,6 +43,7 @@ function validateData(form) {
     return false;
 
 }
+
 $(function() {
 
     document.getElementById('graphik').addEventListener('click', function (e) {
@@ -59,17 +59,42 @@ $(function() {
             var svgPoint = htmlCoordinatesPoint.matrixTransform(svg.getScreenCTM().inverse()); // экранные координаты в координаты элемента
             var calcX = (svgPoint.x - 151) * r / 110;
             var calcY = -(svgPoint.y - 121) * r / 87;
-
-            if (calcX >= -4 && calcX <= -3.5) calcX = -3;
-            else if (calcX >= -3.5 && calcX < -2.5) calcX = -3;
+            if (r == 1) {
+                if (calcX >= -2.5 && calcX < -1.0) calcX = -2;
+                else if (calcX >= -1.0 && calcX < -0.5) calcX = -1;
+                else if (calcX >= -0.5 && calcX < 0.5) calcX = 0;
+                else if (calcX >= 0.5 && calcX <= 1.0) calcX = 1;
+                else if (calcX >= 1.0 && calcX < 2.5) calcX = 2;
+                else calcX = 999;
+            }if (r == 1.5) {
+                if (calcX >= -2.5 && calcX < -1.5) calcX = -2;
+                else if (calcX >= -1.5 && calcX < -0.5) calcX = -1;
+                else if (calcX >= -0.5 && calcX < 0.5) calcX = 0;
+                else if (calcX >= 0.5 && calcX < 1.5) calcX = 1;
+                else if (calcX >= 1.5 && calcX < 2.5) calcX = 2;
+                else calcX = 999;
+            } if (r == 2) {
+                if (calcX >= -3.5 && calcX < -2.0) calcX = -3;
+                else if (calcX >= -2.0 && calcX < -1.5) calcX = -2;
+                else if (calcX >= -1.5 && calcX < -0.5) calcX = -1;
+                else if (calcX >= -0.5 && calcX < 0.5) calcX = 0;
+                else if (calcX >= 0.5 && calcX < 1.5) calcX = 1;
+                else if (calcX >= 1.5 && calcX <= 2.0) calcX = 2;
+                else if (calcX >= 2.0 && calcX < 3.5) calcX = 3;
+                else calcX = 999;
+            } if (r == 2.5 || r == 3) {
+            if (calcX >= -4 && calcX < -3.0) calcX = -4;
+            else if (calcX >= -3.0 && calcX < -2.5) calcX = -3;
             else if (calcX >= -2.5 && calcX < -1.5) calcX = -2;
             else if (calcX >= -1.5 && calcX < -0.5) calcX = -1;
             else if (calcX >= -0.5 && calcX < 0.5) calcX = 0;
             else if (calcX >= 0.5 && calcX < 1.5) calcX = 1;
             else if (calcX >= 1.5 && calcX < 2.5) calcX = 2;
-            else if (calcX >= 2.5 && calcX < 3.5) calcX = 3;
-            else if (calcX >= 3.5 && calcX <= 4.0) calcX = 4;
+            else if (calcX >= 2.5 && calcX <= 3.0) calcX = 3;
+            else if (calcX > 3.0 && calcX <= 4.0) calcX = 4;
             else calcX = 999;
+            }
+
 
             document.getElementById('corX').value = calcX;
             document.getElementById('corY').value = calcY.toFixed(2);
@@ -77,15 +102,16 @@ $(function() {
             var getX = svgPoint.x;
             var getY = svgPoint.y;
 
-            var point = document.getElementById('point');
-
-            setAttributes(point, {"cx": String(getX), "cy": String(getY), "r": "1"});
+            var point = document.getElementById("point");
+            setAttributes(point, {"cx": String(getX), "cy": String(getY), "r": "2"});
 
             function setAttributes(el, options) {
                 Object.keys(options).forEach(function (attr) {
                     el.setAttribute(attr, options[attr]);
                 })
             }
+
         }
     );
 });
+

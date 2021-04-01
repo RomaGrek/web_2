@@ -67,8 +67,7 @@
                 <path class="svg-figure circle-figure" d="M 150 163 A 77 77 0 0 0 205 120 L 150 120 Z"
                       fill="green" fill-opacity="0.25" stroke="darkgreen" stroke-opacity="0.5" id="points"></path>
 
-                <circle class="point" cx="0" cy="0" r="0" fill="yellow" stroke="navy" stroke-width="10"
-                        id="point"></circle>
+                <circle class="point" cx="0" cy="0" r="0" id="point" fill="yellow" stroke="navy" stroke-width="10"></circle>
 
             </svg>
         </td>
