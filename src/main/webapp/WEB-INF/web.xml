@@ -9,11 +9,11 @@
         <servlet-class>com.example.MyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>>MyServlet</servlet-name>
+        <servlet-name>MyServlet</servlet-name>
         <url-pattern>/page1.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>>MyServlet</servlet-name>
+        <servlet-name>MyServlet</servlet-name>
         <url-pattern>/page2.do</url-pattern>
     </servlet-mapping>     
 
