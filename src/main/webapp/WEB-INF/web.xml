@@ -5,13 +5,17 @@
          version="4.0">
     <display-name>web-lab2</display-name>
     <servlet>
-        <servlet-name>ControllerServlet</servlet-name>
-        <servlet-class>servlets.ControllerServlet</servlet-class>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>com.example.MyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ControllerServlet</servlet-name>
-        <url-pattern>/ControllerServlet</url-pattern>
+        <servlet-name>>MyServlet</servlet-name>
+        <url-pattern>/page1.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>>MyServlet</servlet-name>
+        <url-pattern>/page2.do</url-pattern>
+    </servlet-mapping>     
 
     <servlet>
         <servlet-name>AreaCheckServlet</servlet-name>
